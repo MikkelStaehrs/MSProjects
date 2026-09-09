@@ -422,9 +422,10 @@ accepted as a breach would be crying wolf.
 **Written in the currency of the quote, reported in euro. Always.** A line
 carries `currency` and `eur_rate`, and `v_node_cost` is the one place the
 conversion happens. Everything rolled up, compared or reported is euro, and
-`economics` no longer offers a choice: the company PID that started all of this
-had 50 tDKK in one field and 8 to 10 tEUR in another, describing roughly the
-same saving.
+`economics` no longer offers a choice. A form that takes whatever number is in
+front of you and never says which currency it is will end up holding two
+figures that describe the same saving and disagree by a factor of seven. The
+figure that goes upwards has to be one currency.
 
 **The rate lives on the line, not on the project.** A rate on the project would
 be one number that silently rewrites every past total the day it moves, so a
@@ -525,12 +526,13 @@ Every view runs with `security_invoker = on`, so RLS from the tables carries thr
 The company system has **two** documents, not one, and they have to be treated
 differently.
 
-**1. PID, Project Initiation Document.** Filled in once at the start, eleven fields.
-Known as of 1 September 2026:
+**1. PID, Project Initiation Document.** Filled in once at the start, eleven
+fields. Mapped as of 1 September 2026; the shapes below are what this tool has
+to be able to produce, not a copy of anyone's template:
 
 | Field | Character | Where it belongs with us |
 |---|---|---|
-| *(missing from the company PID)* | **Goal**, what the project must achieve | `reporting.pid.goal` |
+| *(added here)* | **Goal**, what the project must achieve, and how you can tell whether it worked | `reporting.pid.goal` |
 | A summary of current situation | Narrative | `reporting.pid` |
 | Problem or opportunity | Narrative, overlaps the above | `reporting.pid` |
 | Corrective action | Narrative, really "the chosen solution" | `reporting.pid` |
@@ -545,9 +547,8 @@ Known as of 1 September 2026:
 
 The written half of the PID is entered on `/p/[id]/identitet` and lives in
 `node.reporting.pid`. Roles live in `reporting.people`, amounts in
-`reporting.economics` with an **explicit unit**, because that was exactly what the
-company's own PID lacked: 50 tDKK in one field and 8 to 10 tEUR in another, about
-the same saving. The field lists live in `lib/identity.ts` and nowhere else.
+`reporting.economics` with an **explicit unit**, because a unit left implicit is
+the one field that quietly turns a saving into a different saving. The field lists live in `lib/identity.ts` and nowhere else.
 
 **Approval** (`reporting.approval`) is the gate that separates an idea from a funded
 project: state, date, granted amount and who decided. Without it you cannot tell
@@ -794,8 +795,10 @@ Each field is shown **separately with its own copy button**, in the same order a
 the fields in the company Power App. Progress percentage and next date are shown as
 **context** beside them, so the text can be checked. They are not typed anywhere.
 
-No SharePoint integration. No API. No IT approval. The user pastes it himself. He
-just no longer has to phrase anything.
+Nothing is submitted anywhere from here: no integration, no API, no
+credentials held against another system. The text is copied out and pasted in
+by hand, deliberately. The point was never to automate the submission, it was
+to stop having to phrase the thing from scratch every Friday.
 
 **One sentence per recipient, worst wait first.** The first real report read
 «Waiting on Project Board: ..., 1 days. Waiting on Project Board: ..., 0 days.»
