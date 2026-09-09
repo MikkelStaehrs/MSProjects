@@ -1,0 +1,210 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--sheet);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .tn{font-variant-numeric:tabular-nums}
+  .page{width:794px;min-height:1123px;padding:56px 60px 48px}
+  .fld{margin-bottom:14px}
+  .fld .k{font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .fld .v{font-size:11.5px;line-height:1.6;margin-top:3px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0 34px}
+  h2.s{font-family:var(--display);font-weight:500;font-size:18px;margin:0 0 10px;
+       border-bottom:1px solid var(--rule-strong);padding-bottom:5px}
+  .sec{margin-top:26px}
+  .cells{display:flex;gap:2px;flex:1} .cell{height:6px;flex:1;background:var(--empty)} .cell.on{background:var(--green)}
+</style>
+
+<div class="page">
+
+  <!-- Head -->
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:30px">
+    <div style="flex:1">
+      <div class="lbl m">Production &nbsp;·&nbsp; PR-26-0001 &nbsp;·&nbsp; Hall 3, line 2</div>
+      <h1 class="dsp" style="font-size:38px;line-height:1.06;letter-spacing:-.02em;margin:8px 0 0">
+        Seed scanner line 2</h1>
+      <p style="margin:10px 0 0;font-size:12.5px;line-height:1.6;max-width:480px">
+        Replace the manual sampling station on line 2 with an inline CT scanner, so quality data
+        follows the batch instead of being reconstructed afterwards.</p>
+    </div>
+    <div style="flex:0 0 auto;text-align:right">
+      <div class="lbl m">Status</div>
+      <div class="dsp" style="font-size:22px;margin-top:3px">Active</div>
+      <div class="lbl m" style="margin-top:12px">Brief printed</div>
+      <div class="tn" style="font-size:11px;margin-top:3px">2 September 2026</div>
+    </div>
+  </div>
+
+  <div style="height:2px;background:var(--ink);margin-top:20px"></div>
+
+  <!-- Figures strip -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0 26px;padding:18px 0;border-bottom:1px solid var(--rule-strong)">
+    <div>
+      <div class="lbl m">Progress</div>
+      <div style="display:flex;align-items:baseline;gap:9px;margin-top:5px">
+        <span class="num" style="font-size:26px">58 %</span>
+        <span class="m tn" style="font-size:10px">7 of 12</span>
+      </div>
+      <div style="display:flex;margin-top:6px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div class="lbl m">Next date</div>
+      <div class="num" style="font-size:26px;margin-top:5px">11 Sep</div>
+      <div class="m" style="font-size:10px;margin-top:4px">Acceptance test, in 9 days</div>
+    </div>
+    <div>
+      <div class="lbl m">Payback</div>
+      <div class="num" style="font-size:26px;margin-top:5px">3.5 yr</div>
+      <div class="m" style="font-size:10px;margin-top:4px">1 450 000 against 410 000 a year</div>
+    </div>
+    <div>
+      <div class="lbl m">Open blockers</div>
+      <div class="num ox" style="font-size:26px;margin-top:5px">1</div>
+      <div class="ox" style="font-size:10px;margin-top:4px">19 days waiting on IT</div>
+    </div>
+  </div>
+
+  <!-- Why -->
+  <div class="sec">
+    <h2 class="s">Why</h2>
+    <div class="fld">
+      <div class="k">Goal</div>
+      <div class="v">Quality data follows every batch off line 2 within 24 hours of the run, with
+        no manual sampling and no file copying by hand.</div>
+    </div>
+    <div class="two">
+      <div class="fld">
+        <div class="k">Current situation</div>
+        <div class="v">An operator pulls a sample every fourth pallet and carries it to the lab.
+          Results land two to five days later, when the pallet has usually shipped.</div>
+      </div>
+      <div class="fld">
+        <div class="k">Problem or opportunity</div>
+        <div class="v">Deviations are found after despatch. Three recalls last season traced back
+          to batches the lab had already flagged, too late to act on.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What -->
+  <div class="sec">
+    <h2 class="s">What</h2>
+    <div class="fld">
+      <div class="k">Chosen solution</div>
+      <div class="v">Inline CT scanner above the belt, with the data landing in the platform
+        automatically.</div>
+    </div>
+    <div class="two">
+      <div class="fld">
+        <div class="k">In scope</div>
+        <div class="v">Line 2 only. Scanner, mounting, data path, operator training.</div>
+      </div>
+      <div class="fld">
+        <div class="k">Out of scope</div>
+        <div class="v">Line 1 and 3. Any change to the lab workflow.</div>
+      </div>
+    </div>
+    <div class="fld">
+      <div class="k">Standing risks</div>
+      <div class="v">Dust ingress in the tube housing. Vibration from the upstream elevator.</div>
+    </div>
+  </div>
+
+  <!-- Milestones -->
+  <div class="sec">
+    <h2 class="s">Milestones</h2>
+    <div style="display:grid;grid-template-columns:76px 1fr 92px;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:7px 0">
+      <div class="tn m" style="font-size:11px">21 Aug</div>
+      <div style="font-size:11.5px">Load cells mounted and wired</div>
+      <div class="lbl m" style="text-align:right">Done</div>
+    </div>
+    <div style="display:grid;grid-template-columns:76px 1fr 92px;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:7px 0">
+      <div class="tn m" style="font-size:11px">11 Sep</div>
+      <div style="font-size:11.5px">Acceptance test on hall floor</div>
+      <div class="lbl m" style="text-align:right">Planned</div>
+    </div>
+    <div style="display:grid;grid-template-columns:76px 1fr 92px;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:7px 0">
+      <div class="tn m" style="font-size:11px">25 Sep</div>
+      <div style="font-size:11.5px">Operator training complete, both shifts</div>
+      <div class="lbl m" style="text-align:right">Planned</div>
+    </div>
+    <div style="display:grid;grid-template-columns:76px 1fr 92px;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:7px 0">
+      <div class="tn m" style="font-size:11px">18 Dec</div>
+      <div style="font-size:11.5px">Handover to maintenance</div>
+      <div class="lbl m" style="text-align:right">Planned</div>
+    </div>
+  </div>
+
+  <!-- Money and people -->
+  <div class="sec two" style="gap:0 34px">
+    <div>
+      <h2 class="s">Money</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 20px">
+        <div class="fld"><div class="k">Cost</div><div class="v tn">1 450 000 DKK</div></div>
+        <div class="fld"><div class="k">Annual benefit</div><div class="v tn">410 000 DKK</div></div>
+      </div>
+      <div class="fld">
+        <div class="k">Approval</div>
+        <div class="v">Approved 12 March 2026 by the investment board, 1 400 000 DKK granted.
+          <span class="ox">The estimate is 50 000 above the grant, 3.6 per cent over.</span></div>
+      </div>
+      <div class="fld">
+        <div class="k">Account string</div>
+        <div class="v tn">4120-0086-PR26</div>
+      </div>
+    </div>
+    <div>
+      <h2 class="s">People</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 20px">
+        <div class="fld"><div class="k">Project manager</div><div class="v">Mikkel Stæhr</div></div>
+        <div class="fld"><div class="k">Project owner</div><div class="v">Line Hoffmann</div></div>
+        <div class="fld"><div class="k">Product owner</div><div class="v">Mikkel Stæhr</div></div>
+        <div class="fld"><div class="k">Process owner</div><div class="v">Jens Ulrik Berg</div></div>
+      </div>
+      <div class="fld"><div class="k">Members</div><div class="v">Anna Kruse, Peter Lund</div></div>
+      <div class="fld"><div class="k">Other stakeholders</div><div class="v">Quality, Maintenance</div></div>
+    </div>
+  </div>
+
+  <!-- Decisions -->
+  <div class="sec">
+    <h2 class="s">Decisions on record</h2>
+    <div style="display:grid;grid-template-columns:76px 1fr;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:8px 0">
+      <div class="tn m" style="font-size:11px">14 Aug</div>
+      <div style="font-size:11.5px;line-height:1.6">
+        <span style="font-weight:500">Chose 130 kV over 100 kV.</span>
+        Heavier seed needs the penetration.
+        <span class="m">Rejected: 100 kV, cheaper tube but unusable on sugar beet pellets.</span></div>
+    </div>
+    <div style="display:grid;grid-template-columns:76px 1fr;gap:0 16px;align-items:baseline;border-bottom:1px solid var(--rule);padding:8px 0">
+      <div class="tn m" style="font-size:11px">2 Jul</div>
+      <div style="font-size:11.5px;line-height:1.6">
+        <span style="font-weight:500">Mount above the belt, not in a bypass.</span>
+        Every pallet gets measured instead of a sample.
+        <span class="m">Rejected: bypass loop, cheaper to install but keeps the sampling problem.</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top:34px;border-top:1px solid var(--rule-strong);padding-top:10px;display:flex;justify-content:space-between">
+    <div class="lbl m">MSProjects &nbsp;·&nbsp; brief, generated from the project identity</div>
+    <div class="lbl m">PR-26-0001</div>
+  </div>
+
+</div>

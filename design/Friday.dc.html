@@ -1,0 +1,250 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .tn{font-variant-numeric:tabular-nums}
+  .g3{display:grid;grid-template-columns:184px 1fr 420px}
+  .bl{border-left:1px solid var(--rule)}
+  .mark{display:block;width:7px;height:7px;flex:0 0 auto}
+  .navlink{font-size:12px;color:var(--muted)}
+  .navlink.on{color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
+  .cf{border:1px solid var(--rule);background:var(--sheet)}
+  .cf-h{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding:10px 16px}
+  .cf-src{font-size:9.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--rule-strong)}
+  .cf-b{padding:14px 16px;font-size:13.5px;line-height:1.65}
+  .btn{display:block;width:100%;text-align:center;padding:10px 18px;font-size:10px;font-weight:500;
+       letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+  .btn-g{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+</style>
+
+<header style="display:flex;align-items:flex-end;justify-content:space-between;padding:34px 64px 18px">
+  <span class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</span>
+  <div style="display:flex;align-items:baseline;gap:28px">
+    <span class="navlink">Overview</span><span class="navlink">Projects</span>
+    <span class="navlink">Blockers</span><span class="navlink on">Friday</span>
+    <span class="navlink">Templates</span>
+    <span class="rs" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-left:8px">Sign out</span>
+  </div>
+</header>
+<div style="height:2px;background:var(--ink)"></div>
+
+<div class="g3">
+  <div class="lbl m" style="padding:12px 20px 12px 64px">Week 36</div>
+  <div class="lbl m bl" style="padding:12px 40px">31 August to 6 September 2026 &nbsp;·&nbsp; 3 projects</div>
+  <div class="bl" style="display:flex;align-items:center;justify-content:flex-end;gap:24px;padding:12px 64px 12px 32px">
+    <span class="lbl" style="color:var(--green)">New entry &nbsp;Ctrl K</span>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<!-- Project 1 -->
+<div class="g3">
+  <div style="padding:32px 20px 32px 64px">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="mark" style="border:1px solid var(--rule-strong)"></span>
+      <span class="lbl-t">Not reported</span>
+    </div>
+    <p class="m" style="margin:10px 0 0;font-size:11px;line-height:1.65">
+      Copy the four fields into the Power App, then mark it below.</p>
+
+    <div class="m" style="margin-top:16px;font-size:11px;line-height:1.65">
+      Progress<br>
+      <span class="num" style="font-size:20px;color:var(--ink)">58 %</span><br>
+      <span class="tn">7 of 12 tasks</span>
+    </div>
+    <div class="m" style="margin-top:14px;font-size:11px;line-height:1.65">
+      Next date<br>
+      <span style="color:var(--ink)">11 Sep</span>
+      <span class="tn m"> in 9 days</span>
+    </div>
+
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px">
+      <span class="btn">Mark reported</span>
+    </div>
+  </div>
+
+  <div class="bl" style="padding:32px 40px">
+    <h2 class="dsp" style="font-size:30px;line-height:1.2;letter-spacing:-.01em;margin:0">
+      Seed scanner line 2</h2>
+    <p class="m" style="margin:8px 0 0;font-size:11px">
+      Since the last report on 28 August 2026. 4 log entries in the basis.</p>
+
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
+
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Status</span>
+            <span class="cf-src">Derived from node.status</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copy</span>
+        </div>
+        <div class="cf-b">Active</div>
+      </div>
+
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Stage</span>
+            <span class="cf-src">Your choice, reporting.stage</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copy</span>
+        </div>
+        <div class="cf-b">
+          <span style="border-bottom:1px solid var(--rule-strong);padding-bottom:3px">Execution</span>
+          <span class="rs" style="font-size:9px;margin-left:8px">&#9662;</span>
+        </div>
+      </div>
+
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Progress</span>
+            <span class="cf-src">Derived from blockers and dates</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copy</span>
+        </div>
+        <div class="cf-b" style="display:flex;align-items:baseline;gap:12px">
+          <span class="ox">Off Track</span>
+          <span class="m" style="font-size:11px">Server access and VLAN has passed its expected reply date</span>
+        </div>
+      </div>
+
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Status comment</span>
+            <span class="cf-src">Derived from log entries and blockers</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copy</span>
+        </div>
+        <div class="cf-b">
+          Load cells mounted and wired. Walked the line with maintenance, shutdown window agreed
+          for week 39. Chased IT again on the VLAN, ticket reassigned with no date given.
+          Waiting on IT: Server access and VLAN, 19 days, expected reply 22 August has passed.
+        </div>
+      </div>
+
+    </div>
+
+    <p class="m" style="margin:20px 0 0;max-width:672px;border-top:1px solid var(--rule);padding-top:14px;font-size:11px;line-height:1.65">
+      The text is assembled from your log entries and is not rewritten. If it should read
+      differently, edit the entry on the <span class="gr">project page</span>, not the report.
+    </p>
+  </div>
+
+  <div class="bl">
+    <section style="padding:32px 64px 30px 32px">
+      <div class="lbl m">What the text came from</div>
+      <div style="margin-top:14px">
+        <div style="border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m tn" style="font-size:10px">21 Aug · Work</div>
+          <p style="margin:4px 0 0;font-size:12px;line-height:1.65">Load cells mounted and wired.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m tn" style="font-size:10px">28 Aug · Meeting</div>
+          <p style="margin:4px 0 0;font-size:12px;line-height:1.65">
+            Walked the line with maintenance. Shutdown window agreed for week 39.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m tn" style="font-size:10px">26 Aug · Risk</div>
+          <p style="margin:4px 0 0;font-size:12px;line-height:1.65">
+            If the VLAN slips past week 38 the acceptance test moves with it.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0">
+          <div class="m tn" style="font-size:10px">1 Sep · Work</div>
+          <p style="margin:4px 0 0;font-size:12px;line-height:1.65">
+            Chased IT again on the VLAN. Ticket reassigned, no date given.</p>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+    <section style="padding:24px 64px 30px 32px">
+      <div class="lbl m">Last week</div>
+      <p class="m" style="margin:12px 0 0;font-size:12px;line-height:1.7">
+        <span class="lbl-t" style="color:var(--ink)">Week 35 · Active · Execution · At Risk</span><br>
+        Cabinet delivery slipped, replacement shipped. Load cell wiring started.
+      </p>
+    </section>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<!-- Project 2, reported -->
+<div class="g3">
+  <div style="padding:32px 20px 32px 64px">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="mark" style="background:var(--green)"></span>
+      <span class="lbl-t">Reported</span>
+    </div>
+    <p class="m" style="margin:10px 0 0;font-size:11px;line-height:1.65">
+      This week&rsquo;s report is saved here and marked as entered in the company system.</p>
+
+    <div class="m" style="margin-top:16px;font-size:11px;line-height:1.65">
+      Progress<br>
+      <span class="num" style="font-size:20px;color:var(--ink)">38 %</span><br>
+      <span class="tn">3 of 8 tasks</span>
+    </div>
+
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px">
+      <span class="btn">Save again</span>
+      <span class="btn btn-g">Undo</span>
+    </div>
+  </div>
+
+  <div class="bl" style="padding:32px 40px">
+    <h2 class="dsp" style="font-size:30px;line-height:1.2;letter-spacing:-.01em;margin:0">
+      Data platform</h2>
+    <p class="m" style="margin:8px 0 0;font-size:11px">
+      Since the last report on 28 August 2026. 2 log entries in the basis.</p>
+
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Status</span><span class="cf-src">Derived from node.status</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copied</span>
+        </div>
+        <div class="cf-b">Active</div>
+      </div>
+      <div class="cf">
+        <div class="cf-h">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="lbl m">Progress</span>
+            <span class="cf-src">Derived from blockers and dates</span>
+          </div>
+          <span class="lbl" style="color:var(--green)">Copy</span>
+        </div>
+        <div class="cf-b" style="display:flex;align-items:baseline;gap:12px">
+          <span class="gr">On Track</span>
+          <span class="m" style="font-size:11px">no open blockers, next date is 16 days out</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bl">
+    <section style="padding:32px 64px 30px 32px">
+      <div class="lbl m">What the text came from</div>
+      <div style="margin-top:14px">
+        <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0">
+          <div class="m tn" style="font-size:10px">30 Aug · Work</div>
+          <p style="margin:4px 0 0;font-size:12px;line-height:1.65">
+            Schema for the run table drafted and reviewed with Anna.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

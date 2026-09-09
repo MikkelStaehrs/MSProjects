@@ -1,0 +1,311 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .tn{font-variant-numeric:tabular-nums}
+  .g3{display:grid;grid-template-columns:184px 1fr 420px}
+  .bl{border-left:1px solid var(--rule)}
+  .mark{display:block;width:7px;height:7px;flex:0 0 auto}
+  .navlink{font-size:12px;color:var(--muted)}
+  .navlink.on{color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
+  .pnav{font-size:12px;padding:9px 0;border-top:1px solid var(--rule);color:var(--muted)}
+  .pnav.on{color:var(--ink);font-weight:500}
+  .f{display:block}
+  .f .lb{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .f .dot{border-bottom:1px dotted var(--rule-strong)}
+  .f .in{border-bottom:1px solid var(--rule-strong);padding:7px 0 6px;font-size:13px;min-height:30px}
+  .f .in.empty{color:var(--rule-strong)}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  h3.sec{font-family:var(--display);font-weight:500;font-size:24px;margin:0 0 4px}
+</style>
+
+<header style="display:flex;align-items:flex-end;justify-content:space-between;padding:34px 64px 18px">
+  <span class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</span>
+  <div style="display:flex;align-items:baseline;gap:28px">
+    <span class="navlink">Overview</span><span class="navlink on">Projects</span>
+    <span class="navlink">Blockers</span><span class="navlink">Friday</span>
+    <span class="navlink">Templates</span>
+    <span class="rs" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-left:8px">Sign out</span>
+  </div>
+</header>
+<div style="height:2px;background:var(--ink)"></div>
+
+<div class="g3">
+  <div class="lbl m" style="padding:12px 20px 12px 64px">Production</div>
+  <div class="lbl bl tn" style="padding:12px 40px">
+    <span class="m">Production</span><span class="rs">.</span><span>PR-26-0001</span></div>
+  <div class="bl" style="display:flex;align-items:center;justify-content:flex-end;gap:24px;padding:12px 64px 12px 32px">
+    <span class="lbl" style="color:var(--green)">New entry &nbsp;Ctrl K</span>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<!-- Title block, abbreviated -->
+<div class="g3">
+  <div style="padding:28px 20px 28px 64px">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="mark" style="background:var(--green)"></span>
+      <span class="lbl-t">Active</span><span class="rs" style="font-size:9px">&#9662;</span>
+    </div>
+    <div style="margin-top:20px">
+      <div class="lbl m">People</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;line-height:1.3"><div>Mikkel Stæhr</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">project manager, product owner</div></div>
+        <div style="font-size:11px;line-height:1.3"><div>Line Hoffmann</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">project owner</div></div>
+        <div style="font-size:11px;line-height:1.3"><div>Jens Ulrik Berg</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">process owner</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bl" style="padding:28px 40px">
+    <h1 class="dsp" style="font-size:42px;line-height:1.08;letter-spacing:-.02em;margin:0">
+      Seed scanner line 2</h1>
+  </div>
+  <div class="bl" style="padding:28px 64px 28px 32px">
+    <div class="lbl m">Timeline</div>
+    <div style="margin-top:12px">
+      <div style="display:flex;gap:12px;border-top:1px solid var(--rule);padding:8px 0">
+        <span class="lbl m" style="width:54px">Start</span><span class="tn" style="font-size:12px">4 May 2026</span></div>
+      <div style="display:flex;gap:12px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0">
+        <span class="lbl m" style="width:54px">End</span><span class="tn" style="font-size:12px">18 December 2026</span></div>
+    </div>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<div class="g3">
+  <!-- Sub navigation -->
+  <div style="padding:22px 20px 22px 64px">
+    <div class="pnav">Tree</div>
+    <div class="pnav on">Identity</div>
+    <div class="pnav">Documents</div>
+    <div class="pnav">Reports</div>
+    <div class="pnav" style="border-bottom:1px solid var(--rule)">Brief</div>
+    <div class="pnav" style="border-top:0">Map</div>
+  </div>
+
+  <!-- The form -->
+  <div class="bl" style="padding:28px 40px 40px">
+
+    <section>
+      <h3 class="sec">Identification</h3>
+      <p class="m" style="margin:0 0 18px;font-size:11.5px;line-height:1.65;max-width:600px">
+        What the project is called in every other system. The number is assigned here and then
+        frozen: an identifier that moves is not an identifier.</p>
+      <div class="pair">
+        <div class="f">
+          <div class="lb">Project no.</div>
+          <div class="in tn" style="letter-spacing:.04em">PR-26-0001
+            <span class="rs" style="font-size:10px;letter-spacing:0;margin-left:10px">assigned by the system</span></div>
+        </div>
+        <div class="f">
+          <div class="lb"><span class="dot">Account string</span></div>
+          <div class="in tn">4120-0086-PR26</div>
+        </div>
+      </div>
+      <div class="pair" style="margin-top:22px">
+        <div class="f">
+          <div class="lb"><span class="dot">Portfolio</span></div>
+          <div class="in">Operations</div>
+        </div>
+        <div class="f">
+          <div class="lb">Priority</div>
+          <div class="in">High <span class="rs" style="font-size:9px;margin-left:8px">&#9662;</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:44px">
+      <h3 class="sec">Framing</h3>
+      <p class="m" style="margin:0 0 18px;font-size:11.5px;line-height:1.65;max-width:600px">
+        Where the work physically lands. It decides who is affected and which shutdown window is
+        needed, and it can be set on any node, because a hardware part often sits somewhere else.</p>
+      <div class="pair">
+        <div class="f">
+          <div class="lb"><span class="dot">Location</span></div>
+          <div class="in">Hall 3, line 2</div>
+        </div>
+        <div class="f">
+          <div class="lb">Category</div>
+          <div class="in">Production <span class="rs" style="font-size:9px;margin-left:8px">&#9662;</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:44px">
+      <h3 class="sec">People</h3>
+      <p class="m" style="margin:0 0 18px;font-size:11.5px;line-height:1.65;max-width:600px">
+        The four roles the company Status Update notifies, plus the ones it forgets. Used for
+        reference only; no mail is sent from here.</p>
+      <div class="pair">
+        <div class="f"><div class="lb">Project manager</div><div class="in">Mikkel Stæhr</div></div>
+        <div class="f"><div class="lb">Project owner</div><div class="in">Line Hoffmann</div></div>
+      </div>
+      <div class="pair" style="margin-top:22px">
+        <div class="f"><div class="lb"><span class="dot">Product owner</span></div><div class="in">Mikkel Stæhr</div></div>
+        <div class="f"><div class="lb"><span class="dot">Process owner</span></div><div class="in">Jens Ulrik Berg</div></div>
+      </div>
+      <div class="pair" style="margin-top:22px">
+        <div class="f"><div class="lb">Created by</div><div class="in">Mikkel Stæhr</div></div>
+        <div class="f"><div class="lb"><span class="dot">Steering committee</span></div><div class="in empty">Not recorded</div></div>
+      </div>
+      <div class="pair" style="margin-top:22px">
+        <div class="f"><div class="lb">Project members</div><div class="in">Anna Kruse, Peter Lund</div></div>
+        <div class="f"><div class="lb"><span class="dot">Other stakeholders</span></div><div class="in">Quality, Maintenance</div></div>
+      </div>
+    </section>
+
+    <section style="margin-top:44px">
+      <h3 class="sec">Economics</h3>
+      <p class="m" style="margin:0 0 18px;font-size:11.5px;line-height:1.65;max-width:600px">
+        Two amounts with an explicit unit, because that is exactly what the company PID lacked:
+        50 tDKK in one field and 8 to 10 tEUR in another, about the same saving.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 40px">
+        <div class="f"><div class="lb">Cost</div><div class="in tn">1 450 000</div></div>
+        <div class="f"><div class="lb">Annual benefit</div><div class="in tn">410 000</div></div>
+        <div class="f"><div class="lb">Unit</div><div class="in">DKK <span class="rs" style="font-size:9px;margin-left:8px">&#9662;</span></div></div>
+      </div>
+
+      <div style="display:flex;align-items:baseline;gap:14px;margin-top:20px;border-top:1px solid var(--rule);padding-top:14px">
+        <span class="lbl m">Payback</span>
+        <span class="num" style="font-size:26px">3.5 years</span>
+        <span class="m" style="font-size:11px">Derived. The company form never asks for it, and a
+          management team works it out in its head anyway.</span>
+      </div>
+
+      <div style="margin-top:30px">
+        <div class="lbl m" style="margin-bottom:12px">Approval</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0 32px">
+          <div class="f"><div class="lb">State</div><div class="in gr">Approved <span class="rs" style="font-size:9px;margin-left:8px">&#9662;</span></div></div>
+          <div class="f"><div class="lb">Date</div><div class="in tn">12 March 2026</div></div>
+          <div class="f"><div class="lb">Amount granted</div><div class="in tn">1 400 000</div></div>
+          <div class="f"><div class="lb">Decided by</div><div class="in">Investment board</div></div>
+        </div>
+        <div class="ox" style="margin-top:14px;font-size:11.5px;line-height:1.65">
+          The estimate is 50 000 DKK above the grant, 3.6 per cent over.
+          <span class="m">Derived, and shown so it is caught in time rather than at the invoice.</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:44px">
+      <h3 class="sec">PID basis</h3>
+      <p class="m" style="margin:0 0 18px;font-size:11.5px;line-height:1.65;max-width:600px">
+        The written half of the company PID. Goal comes first, because the company form has no
+        field for it and it is a core piece of our master data.</p>
+
+      <div class="f" style="margin-bottom:22px">
+        <div class="lb"><span class="dot">Goal</span></div>
+        <div class="in" style="line-height:1.6">
+          Quality data follows every batch off line 2 within 24 hours of the run, with no manual
+          sampling and no file copying by hand.</div>
+      </div>
+      <div class="f" style="margin-bottom:22px">
+        <div class="lb"><span class="dot">Current situation</span></div>
+        <div class="in" style="line-height:1.6">
+          An operator pulls a sample every fourth pallet and carries it to the lab. Results land
+          two to five days later, when the pallet has usually shipped.</div>
+      </div>
+      <div class="f" style="margin-bottom:22px">
+        <div class="lb"><span class="dot">Problem or opportunity</span></div>
+        <div class="in" style="line-height:1.6">
+          Deviations are found after despatch. Three recalls last season traced back to batches
+          the lab had already flagged, too late to act on.</div>
+      </div>
+      <div class="f" style="margin-bottom:22px">
+        <div class="lb"><span class="dot">Chosen solution</span></div>
+        <div class="in" style="line-height:1.6">
+          Inline CT scanner above the belt, with the data landing in the platform automatically.</div>
+      </div>
+      <div class="pair">
+        <div class="f"><div class="lb"><span class="dot">In scope</span></div>
+          <div class="in" style="line-height:1.6">Line 2 only. Scanner, mounting, data path, operator training.</div></div>
+        <div class="f"><div class="lb"><span class="dot">Out of scope</span></div>
+          <div class="in" style="line-height:1.6">Line 1 and 3. Any change to the lab workflow.</div></div>
+      </div>
+      <div class="f" style="margin-top:22px">
+        <div class="lb"><span class="dot">Standing risks</span></div>
+        <div class="in" style="line-height:1.6">
+          Dust ingress in the tube housing. Vibration from the upstream elevator.
+          <span class="m">A standing risk, not a blocker that has happened.</span></div>
+      </div>
+    </section>
+
+    <div style="margin-top:40px;display:flex;gap:12px">
+      <span style="display:inline-block;padding:10px 18px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:var(--paper)">Save identity</span>
+      <span style="display:inline-block;padding:10px 18px;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--rule-strong);color:var(--ink)">Cancel</span>
+    </div>
+  </div>
+
+  <!-- Pulse, abbreviated -->
+  <div class="bl">
+    <section style="padding:28px 64px 26px 32px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px">
+        <h2 class="dsp" style="font-size:24px;margin:0">Work log</h2>
+        <span class="lbl-t" style="color:var(--green)">&#8594; Friday</span>
+      </div>
+      <div style="margin-top:14px">
+        <div style="border-top:1px solid var(--rule);padding:12px 0">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="m tn" style="min-width:52px;font-size:10px">1 Sep</span>
+            <span class="gr" style="font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.14em">Work</span>
+            <span class="rs lbl-t" style="margin-left:auto">Edit</span>
+          </div>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.65">
+            Chased IT again on the VLAN. Ticket reassigned, no date given.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="m tn" style="min-width:52px;font-size:10px">28 Aug</span>
+            <span class="m" style="font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.14em">Meeting</span>
+            <span class="rs lbl-t" style="margin-left:auto">Edit</span>
+          </div>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.65">
+            Walked the line with maintenance. Shutdown window agreed for week 39.</p>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+    <section style="padding:24px 64px 26px 32px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between">
+        <h2 class="dsp" style="font-size:24px;margin:0">Blockers</h2>
+        <span class="lbl-t gr">+ New</span>
+      </div>
+      <div style="margin-top:14px">
+        <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+          <div class="num ox" style="min-width:44px;font-size:30px;line-height:1">19</div>
+          <div style="flex:1">
+            <div style="font-size:13px;line-height:1.35">Server access and VLAN</div>
+            <div class="m" style="font-size:11px;margin-top:2px">IT · expected 22 Aug<span class="ox"> · overdue</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+    <section style="padding:24px 64px 30px 32px">
+      <div class="lbl m">Dependencies</div>
+      <div style="margin-top:12px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+        <div style="font-size:12.5px;line-height:1.5">
+          Waits on <span style="border-bottom:1px solid var(--rule-strong)">Data platform</span></div>
+        <div class="m" style="font-size:11px;margin-top:4px">
+          The scanner cannot deliver data before the platform can take it.</div>
+      </div>
+      <p class="m" style="margin:14px 0 0;font-size:11px;line-height:1.65">
+        The tree says that something sits under something else. It cannot say that one thing must
+        finish before another starts.</p>
+    </section>
+  </div>
+</div>

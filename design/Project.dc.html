@@ -1,0 +1,356 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .tn{font-variant-numeric:tabular-nums}
+  .g3{display:grid;grid-template-columns:184px 1fr 420px}
+  .bl{border-left:1px solid var(--rule)}
+  .mark{display:block;width:7px;height:7px;flex:0 0 auto}
+  .cells{display:flex;gap:2px;flex:1} .cell{height:6px;flex:1;background:var(--empty)} .cell.on{background:var(--green)}
+  .navlink{font-size:12px;color:var(--muted)}
+  .navlink.on{color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
+  .row{display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--rule);padding:10px 0}
+  .prow{display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--rule-strong);
+        padding:16px 0 10px;margin-top:32px}
+  .prow.first{margin-top:0}
+  .tw{width:14px;flex:0 0 auto;text-align:center;font-size:9px;color:var(--rule-strong)}
+  .code{width:80px;flex:0 0 auto;font-size:11px;letter-spacing:.04em;color:var(--muted);
+        font-variant-numeric:tabular-nums}
+  .cell{width:152px;flex:0 0 auto;display:flex;align-items:center;gap:8px}
+  .ttl{flex:1;min-width:0;font-size:13px}
+  .ttl.part{font-size:14.5px;font-weight:500}
+  .ty{width:86px;flex:0 0 auto}
+  .dt{width:72px;flex:0 0 auto;text-align:right;font-size:12px;color:var(--muted);
+      font-variant-numeric:tabular-nums}
+  .act{flex:0 0 auto;font-size:11px}
+  .meta{display:block;margin-top:4px;font-size:10px;color:var(--muted)}
+  .sel{display:flex;align-items:center;gap:8px;width:124px;flex:0 0 auto}
+  .kids{margin-left:4px;border-left:1px solid var(--rule);padding-left:20px}
+  .pnav{font-size:12px;padding:9px 0;border-top:1px solid var(--rule);color:var(--muted)}
+  .pnav.on{color:var(--ink);font-weight:500}
+</style>
+
+<header style="display:flex;align-items:flex-end;justify-content:space-between;padding:34px 64px 18px">
+  <span class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</span>
+  <div style="display:flex;align-items:baseline;gap:28px">
+    <span class="navlink">Overview</span>
+    <span class="navlink on">Projects</span>
+    <span class="navlink">Blockers</span>
+    <span class="navlink">Friday</span>
+    <span class="navlink">Templates</span>
+    <span class="rs" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-left:8px">Sign out</span>
+  </div>
+</header>
+<div style="height:2px;background:var(--ink)"></div>
+
+<!-- Context band -->
+<div class="g3">
+  <div class="lbl m" style="padding:12px 20px 12px 64px">Production</div>
+  <div class="lbl bl tn" style="padding:12px 40px">
+    <span class="m">Production</span><span class="rs">.</span><span>PR-26-0001</span>
+  </div>
+  <div class="bl" style="display:flex;align-items:center;justify-content:flex-end;gap:24px;padding:12px 64px 12px 32px">
+    <span class="lbl" style="color:var(--green)">New entry &nbsp;Ctrl K</span>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<!-- Title block -->
+<div class="g3">
+  <div style="padding:28px 20px 28px 64px">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="mark" style="background:var(--green)"></span>
+      <span class="lbl-t">Active</span>
+      <span class="rs" style="font-size:9px">&#9662;</span>
+    </div>
+
+    <div style="margin-top:20px">
+      <div class="lbl m">People</div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:11px;line-height:1.3">
+          <div>Mikkel Stæhr</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">project manager, product owner</div>
+        </div>
+        <div style="font-size:11px;line-height:1.3">
+          <div>Line Hoffmann</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">project owner</div>
+        </div>
+        <div style="font-size:11px;line-height:1.3">
+          <div>Jens Ulrik Berg</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">process owner</div>
+        </div>
+        <div style="font-size:11px;line-height:1.3">
+          <div>Anna Kruse</div>
+          <div class="m" style="font-size:9.5px;margin-top:2px">responsible</div>
+        </div>
+        <div class="rs" style="font-size:10px">and 2 more</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bl" style="padding:28px 40px">
+    <h1 class="dsp" style="font-size:42px;line-height:1.08;letter-spacing:-.02em;margin:0;max-width:768px">
+      Seed scanner line 2
+    </h1>
+    <p style="margin:14px 0 0;max-width:672px;font-size:13px;line-height:1.65">
+      Replace the manual sampling station on line 2 with an inline CT scanner, so quality data
+      follows the batch instead of being reconstructed afterwards.
+    </p>
+    <div style="display:flex;align-items:center;gap:24px;margin-top:24px;max-width:672px">
+      <div style="flex:1;display:flex;align-items:center;gap:16px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">58 %</span>
+        <span class="m tn" style="min-width:54px;font-size:11px">7 of 12</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bl" style="padding:28px 64px 28px 32px">
+    <div class="lbl m">Timeline</div>
+    <div style="margin-top:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--rule);padding:8px 0">
+        <span class="lbl m" style="width:54px;flex:0 0 auto">Start</span>
+        <span class="tn" style="flex:1;font-size:12px">4 May 2026</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--rule);padding:8px 0">
+        <span class="lbl m" style="width:54px;flex:0 0 auto">Next</span>
+        <span style="flex:1">
+          <span style="font-size:13px">Acceptance test on hall floor</span>
+          <span class="m tn" style="font-size:11px;margin-left:8px">11 Sep, in 9 days · milestone</span>
+        </span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0">
+        <span class="lbl m" style="width:54px;flex:0 0 auto">End</span>
+        <span class="tn" style="flex:1;font-size:12px">18 December 2026
+          <span class="m">in 107 days</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<!-- Body -->
+<div class="g3">
+
+  <!-- Sub navigation -->
+  <div style="padding:22px 20px 22px 64px">
+    <div class="pnav on">Tree</div>
+    <div class="pnav">Identity</div>
+    <div class="pnav">Documents</div>
+    <div class="pnav">Reports</div>
+    <div class="pnav" style="border-bottom:1px solid var(--rule)">Brief</div>
+    <div class="pnav" style="border-top:0">Map</div>
+  </div>
+
+  <!-- Tree -->
+  <div class="bl" style="padding:28px 40px">
+
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+      <div style="min-width:0">
+        <div class="lbl tn"><span>PR-26-0001</span></div>
+        <h2 class="dsp" style="font-size:26px;margin:4px 0 0">Seed scanner line 2</h2>
+      </div>
+      <div class="lbl" style="color:var(--green);flex:0 0 auto">+ New part</div>
+    </div>
+
+    <!-- The tree -->
+    <div style="margin-top:26px">
+
+      <!-- A direct part opens a block: 32 px of air, then a heavier rule -->
+      <div class="prow first">
+        <span class="tw">&#9662;</span>
+        <span class="code">.01</span>
+        <span class="cell">
+          <span class="mark" style="background:var(--green)"></span>
+          <span class="lbl-t">Active</span><span class="rs" style="font-size:9px">&#9662;</span>
+        </span>
+        <span class="ttl part">Production Line: Cleaning</span>
+        <span class="lbl-t m ty">Subproject</span>
+        <span class="dt">1 Jan</span>
+        <span class="act rs">&#9650;&#9660;</span>
+        <span class="act rs">edit</span>
+        <span class="act rs">log</span>
+        <span class="act rs">+</span>
+      </div>
+
+      <div class="row">
+        <span class="tw"></span>
+        <span class="code">.01.01</span>
+        <span class="cell">
+          <span class="mark" style="border:1px solid var(--oxblood)"></span>
+          <span class="lbl-t">On hold</span><span class="rs" style="font-size:9px">&#9662;</span>
+        </span>
+        <span class="ttl" style="padding-left:24px">OEE Dashboards</span>
+        <span class="lbl-t m ty">Development</span>
+        <span class="dt">30 Nov</span>
+        <span class="act rs">&#9650;&#9660;</span>
+        <span class="act rs">edit</span>
+        <span class="act rs">log</span>
+        <span class="act rs">+</span>
+      </div>
+
+      <!-- A closed branch keeps its summary. An open one does not need one. -->
+      <div class="row">
+        <span class="tw">&#9656;</span>
+        <span class="code">.01.02</span>
+        <span class="cell">
+          <span class="mark" style="background:var(--green)"></span>
+          <span class="lbl-t">Active</span><span class="rs" style="font-size:9px">&#9662;</span>
+        </span>
+        <span class="ttl" style="padding-left:24px">Spectral Analysis
+          <span class="meta">4 nodes &nbsp; next 30 Nov &nbsp;
+            <span class="ox">2 blocked, 0 days</span> &nbsp; logged 5 Aug &nbsp; Mikkel St&aelig;hr
+            &nbsp; <span class="gr lbl-t">Open</span></span>
+        </span>
+        <span class="lbl-t m ty">Subproject</span>
+        <span class="dt">30 Nov</span>
+        <span class="act rs">&#9650;&#9660;</span>
+        <span class="act rs">edit</span>
+        <span class="act rs">log</span>
+        <span class="act rs">+</span>
+      </div>
+
+      <div class="prow">
+        <span class="tw">&#9662;</span>
+        <span class="code">.02</span>
+        <span class="cell">
+          <span class="mark" style="background:var(--green)"></span>
+          <span class="lbl-t">Active</span><span class="rs" style="font-size:9px">&#9662;</span>
+        </span>
+        <span class="ttl part">Datahub Holeby</span>
+        <span class="lbl-t m ty">Subproject</span>
+        <span class="dt">1 Jan</span>
+        <span class="act rs">&#9650;&#9660;</span>
+        <span class="act rs">edit</span>
+        <span class="act rs">log</span>
+        <span class="act rs">+</span>
+      </div>
+
+      <!-- The word is the effective state, so it can never fight the mark -->
+      <div class="row" style="border-bottom:1px solid var(--rule)">
+        <span class="tw"></span>
+        <span class="code">.02.01</span>
+        <span class="cell">
+          <span class="mark" style="background:var(--oxblood)"></span>
+          <span class="lbl-t ox">Blocked <span class="tn">19d</span></span>
+          <span class="rs" style="font-size:9px">&#9662;</span>
+        </span>
+        <span class="ttl" style="padding-left:24px">Virtual Machine for SQL Storage</span>
+        <span class="lbl-t m ty">Development</span>
+        <span class="dt">1 Jan</span>
+        <span class="act rs">&#9650;&#9660;</span>
+        <span class="act rs">edit</span>
+        <span class="act rs">log</span>
+        <span class="act rs">+</span>
+      </div>
+
+      <div class="m" style="display:flex;align-items:center;gap:8px;margin-top:16px;font-size:11px">
+        <svg width="9" height="9" viewBox="0 0 9 9" style="flex:0 0 auto">
+          <path d="M4.5 0 L9 4.5 L4.5 9 L0 4.5 Z" fill="none" stroke="#6b6b65" stroke-width="1.2"/>
+        </svg>
+        Diamond means milestone. Status is changed directly in the list.
+        <span class="rs">edit</span> opens the node, its type and its delete button.
+        <span class="rs">log</span> writes an entry on it.
+        <span class="rs">+</span> adds a child.
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Pulse -->
+  <div class="bl">
+    <section style="padding:28px 64px 26px 32px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px">
+        <h2 class="dsp" style="font-size:24px;margin:0">Work log</h2>
+        <span class="lbl-t" style="color:var(--green)">&#8594; Friday</span>
+      </div>
+      <div style="margin-top:14px">
+        <div style="border-top:1px solid var(--rule);padding:12px 0">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="m tn" style="min-width:52px;font-size:10px">1 Sep</span>
+            <span style="font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--green)">Work</span>
+            <span class="rs lbl-t" style="margin-left:auto">Edit</span>
+          </div>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.65">
+            Chased IT again on the VLAN. Ticket reassigned, no date given.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="m tn" style="min-width:52px;font-size:10px">28 Aug</span>
+            <span style="font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Meeting</span>
+            <span class="rs lbl-t" style="margin-left:auto">Edit</span>
+          </div>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.65">
+            Walked the line with maintenance. Shutdown window agreed for week 39.</p>
+        </div>
+        <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <span class="m tn" style="min-width:52px;font-size:10px">26 Aug</span>
+            <span class="ox" style="font-size:9px;font-weight:500;text-transform:uppercase;letter-spacing:.14em">Risk</span>
+            <span class="rs lbl-t" style="margin-left:auto">Edit</span>
+          </div>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.65">
+            If the VLAN slips past week 38 the acceptance test moves with it.</p>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+
+    <section style="padding:24px 64px 26px 32px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between">
+        <h2 class="dsp" style="font-size:24px;margin:0">Blockers</h2>
+        <span class="lbl-t" style="color:var(--green)">+ New</span>
+      </div>
+      <div style="margin-top:14px">
+        <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--rule);padding:12px 0">
+          <div class="num ox" style="min-width:44px;font-size:30px;line-height:1">19</div>
+          <div style="flex:1">
+            <div style="font-size:13px;line-height:1.35">Server access and VLAN</div>
+            <div class="m" style="font-size:11px;margin-top:2px">IT · expected 22 Aug<span class="ox"> · overdue</span></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;opacity:.55">
+          <div class="num" style="min-width:44px;font-size:30px;line-height:1">6</div>
+          <div style="flex:1">
+            <div style="font-size:13px;line-height:1.35">Cabinet delivery slipped</div>
+            <div class="m" style="font-size:11px;margin-top:2px">Vendor · resolved 12 Aug, new cabinet shipped</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+
+    <section style="padding:24px 64px 30px 32px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between">
+        <h2 class="dsp" style="font-size:24px;margin:0">Decisions</h2>
+        <span class="lbl-t" style="color:var(--green)">+ New</span>
+      </div>
+      <div style="margin-top:14px">
+        <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+          <div class="m tn" style="font-size:10px">14 Aug</div>
+          <div style="font-size:13px;margin-top:4px">Chose 130 kV over 100 kV</div>
+          <div class="m" style="font-size:11.5px;line-height:1.6;margin-top:4px">
+            Heavier seed needs the penetration. Rejected: 100 kV, cheaper tube but unusable on
+            sugar beet pellets.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>

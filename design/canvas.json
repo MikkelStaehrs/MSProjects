@@ -1,0 +1,35 @@
+{
+  "artboards": [
+    { "file": "Foundation.dc.html", "title": "Foundation", "x": 0, "y": 0, "w": 1200, "h": 1850 },
+    { "file": "Main.dc.html", "title": "Overview", "x": 1320, "y": 0, "w": 1440, "h": 920 },
+    { "file": "Project.dc.html", "title": "Project, the tree", "x": 2880, "y": 0, "w": 1440, "h": 1360 },
+
+    { "file": "Identity.dc.html", "title": "Project identity", "x": 0, "y": 1970, "w": 1440, "h": 1900 },
+    { "file": "Documents.dc.html", "title": "Documents", "x": 1560, "y": 1970, "w": 1440, "h": 1300 },
+    { "file": "Friday.dc.html", "title": "Friday, the weekly report", "x": 3120, "y": 1970, "w": 1440, "h": 1280 },
+
+    { "file": "Blockers.dc.html", "title": "Blockers", "x": 0, "y": 3990, "w": 1440, "h": 1200 },
+    { "file": "QuickEntry.dc.html", "title": "Quick entry", "x": 1560, "y": 3990, "w": 1100, "h": 1560 },
+    { "file": "Map.dc.html", "title": "Project map", "x": 2780, "y": 3990, "w": 1360, "h": 700, "print": "fixed" },
+
+    { "file": "Brief.dc.html", "title": "Brief, A4", "x": 0, "y": 5670, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Login.dc.html", "title": "Login", "x": 914, "y": 5670, "w": 1200, "h": 820 }
+  ],
+  "annotations": [
+    {
+      "id": "what-this-is",
+      "x": -340,
+      "y": 0,
+      "w": 260,
+      "text": "Drawn from the app as it is actually built, 2 September 2026. Near-white ground, English throughout, no em dashes. Fonts fall back to Didot and Helvetica Neue here, because this canvas cannot reach Google Fonts."
+    },
+    {
+      "id": "reading-order",
+      "x": -340,
+      "y": 240,
+      "w": 260,
+      "text": "Foundation first, then the pages roughly in the order you use them: Overview, the tree, identity, documents, Friday, blockers."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

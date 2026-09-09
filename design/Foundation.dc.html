@@ -1,0 +1,283 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .rule{height:1px;background:var(--rule)} .rule-s{height:1px;background:var(--rule-strong)}
+  .wrap{padding:44px 64px 64px}
+  h2.sec{font-family:var(--display);font-weight:500;font-size:26px;margin:0 0 4px}
+  .sec-note{font-size:11.5px;line-height:1.65;color:var(--muted);max-width:600px;margin:0 0 20px}
+  .block{margin-top:46px}
+  .btn{display:inline-block;padding:10px 18px;font-size:10px;font-weight:500;letter-spacing:.16em;
+       text-transform:uppercase;border:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+  .btn-g{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+  .btn-d{background:transparent;color:var(--oxblood);border-color:var(--oxblood)}
+  .field{border:0;border-bottom:1px solid var(--rule-strong);padding:7px 0 6px;font-size:13px;
+         background:transparent;width:100%;font-family:var(--sans);color:var(--ink)}
+  .mark{display:block;width:7px;height:7px;flex:0 0 auto}
+  .cells{display:flex;gap:2px;flex:1} .cell{height:6px;flex:1;background:var(--empty)} .cell.on{background:var(--green)}
+</style>
+
+<div class="wrap">
+
+  <div style="display:flex;align-items:flex-end;justify-content:space-between">
+    <div class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</div>
+    <div class="lbl m">Design foundation &nbsp;·&nbsp; 2 September 2026</div>
+  </div>
+  <div style="height:2px;background:var(--ink);margin-top:18px"></div>
+
+  <p class="sec-note" style="margin-top:26px;font-size:12.5px;max-width:640px">
+    Editorial typesetting: paper and hairline rules rather than cards and shadows. No rounded
+    corners, no shadows, no icons beyond what is necessary. Everything here is lifted from
+    <span style="color:var(--ink)">app/globals.css</span> and
+    <span style="color:var(--ink)">components/ui.tsx</span>, not designed alongside them.
+  </p>
+
+  <!-- Palette -->
+  <div class="block">
+    <h2 class="sec">Palette</h2>
+    <p class="sec-note">Nine tokens. Oxblood is reserved for overdue time and blockers, and is never
+      used to decorate. Green carries actions, progress and the status «active».</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px">
+      <div>
+        <div style="height:56px;background:#F8F8F6;border:1px solid var(--rule)"></div>
+        <div class="lbl" style="margin-top:8px">paper</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#F8F8F6 &nbsp; the page ground</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#FFFFFF;border:1px solid var(--rule)"></div>
+        <div class="lbl" style="margin-top:8px">sheet</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#FFFFFF &nbsp; forms, report fields</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#1A1F1B"></div>
+        <div class="lbl" style="margin-top:8px">ink</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#1A1F1B &nbsp; text, the heavy rule</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;margin-top:26px">
+      <div>
+        <div style="height:56px;background:#6B6B65"></div>
+        <div class="lbl" style="margin-top:8px">muted</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#6B6B65 &nbsp; labels, secondary text</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#DCDCD7"></div>
+        <div class="lbl" style="margin-top:8px">rule</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#DCDCD7 &nbsp; dividers and rows</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#B4B4AD"></div>
+        <div class="lbl" style="margin-top:8px">rule-strong</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#B4B4AD &nbsp; section breaks</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px;margin-top:26px">
+      <div>
+        <div style="height:56px;background:#1E4A34"></div>
+        <div class="lbl" style="margin-top:8px">green</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#1E4A34 &nbsp; actions, progress, active</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#8A3520"></div>
+        <div class="lbl" style="margin-top:8px">oxblood</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#8A3520 &nbsp; overdue and blockers only</div>
+      </div>
+      <div>
+        <div style="height:56px;background:#E6E6E1"></div>
+        <div class="lbl" style="margin-top:8px">empty</div>
+        <div class="m" style="font-size:11px;margin-top:3px">#E6E6E1 &nbsp; unfilled progress</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type -->
+  <div class="block">
+    <h2 class="sec">Type</h2>
+    <p class="sec-note">Bodoni Moda for display and for numbers meant to be read. Archivo for
+      everything else. Both are loaded through next/font/google, so there is no network call at
+      runtime. This canvas cannot reach Google Fonts, so it renders the same fallback stack the app
+      falls back to: Didot and Helvetica Neue.</p>
+
+    <div style="display:grid;grid-template-columns:110px 1fr;row-gap:0">
+      <div class="lbl m" style="border-top:1px solid var(--rule);padding:14px 0">Brand</div>
+      <div style="border-top:1px solid var(--rule);padding:12px 0">
+        <span class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</span>
+        <span class="m" style="font-size:11px;margin-left:14px">display 40 / 1.0 / -0.02em</span>
+      </div>
+
+      <div class="lbl m" style="border-top:1px solid var(--rule);padding:14px 0">Page</div>
+      <div style="border-top:1px solid var(--rule);padding:12px 0">
+        <span class="dsp" style="font-size:42px;line-height:1.08;letter-spacing:-.02em">Data platform</span>
+        <span class="m" style="font-size:11px;margin-left:14px">display 42 / 1.08 / -0.02em</span>
+      </div>
+
+      <div class="lbl m" style="border-top:1px solid var(--rule);padding:14px 0">Section</div>
+      <div style="border-top:1px solid var(--rule);padding:12px 0">
+        <span class="dsp" style="font-size:26px">Open blockers</span>
+        <span class="m" style="font-size:11px;margin-left:14px">display 26</span>
+      </div>
+
+      <div class="lbl m" style="border-top:1px solid var(--rule);padding:14px 0">Label</div>
+      <div style="border-top:1px solid var(--rule);padding:14px 0">
+        <span class="lbl">NEXT DATE</span>
+        <span class="m" style="font-size:11px;margin-left:14px">sans 10 / 500 / 0.16em / uppercase</span>
+      </div>
+
+      <div class="lbl m" style="border-top:1px solid var(--rule);padding:14px 0">Body</div>
+      <div style="border-top:1px solid var(--rule);padding:14px 0">
+        <span style="font-size:13px">Server access and VLAN, waiting on IT since 14 August.</span>
+        <span class="m" style="font-size:11px;margin-left:14px">sans 13 / 1.6</span>
+      </div>
+
+      <div class="lbl m" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0">Figure</div>
+      <div style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0">
+        <span class="num" style="font-size:30px">19</span>
+        <span class="m" style="font-size:11px;margin-left:14px">display, tabular figures, never a rounded fake</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="block">
+    <h2 class="sec">Status marks</h2>
+    <p class="sec-note">A 7 px square plus a word, and the two always say the same thing. Never
+      colour alone: the word carries the meaning and the mark only makes the row scannable.
+      <strong style="font-weight:500">Six of these are a status you choose. «Blocked» is not.</strong>
+      It left the enum on 2 September 2026 and is derived: a node is blocked exactly when it
+      carries an open blocker, computed in v_node_state and never stored. The word shown is
+      therefore the effective state, with the day count beside it.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:0 44px">
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="border:1px solid var(--muted)"></span><span class="lbl-t">Idea</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="border:1px solid var(--muted)"></span><span class="lbl-t">Planned</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="background:var(--green)"></span><span class="lbl-t">Active</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="background:var(--oxblood)"></span>
+        <span class="lbl-t ox">Blocked 19d</span>
+        <span class="rs" style="font-size:9px">derived</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="border:1px solid var(--oxblood)"></span><span class="lbl-t">Paused</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="background:var(--ink)"></span><span class="lbl-t">Done</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid var(--rule);min-width:150px">
+        <span class="mark" style="background:var(--rule-strong)"></span><span class="lbl-t">Cancelled</span></div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="block">
+    <h2 class="sec">Progress</h2>
+    <p class="sec-note">Drawn as cells, not as a bar. One cell per task in the subtree, so the shape
+      itself says how much work the number is standing on. Above 24 tasks the cells would be thinner
+      than a rule, and it falls back to a single bar. Never editable: it is a view.</p>
+
+    <div style="max-width:620px">
+      <div style="display:flex;align-items:center;gap:16px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell on"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">56 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">5 of 9</span>
+      </div>
+      <div class="m" style="font-size:11px;margin-top:9px">Nine tasks, five done. Cells.</div>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:26px">
+        <span style="display:block;height:6px;flex:1;background:var(--empty)">
+          <span style="display:block;height:100%;width:38%;background:var(--green)"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">38 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">15 of 39</span>
+      </div>
+      <div class="m" style="font-size:11px;margin-top:9px">Thirty-nine tasks. One bar.</div>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:26px">
+        <span style="display:block;height:6px;flex:1;background:var(--empty)"></span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">0 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">0 of 0</span>
+      </div>
+      <div class="m" style="font-size:11px;margin-top:9px">
+        No tasks underneath. A container is not work, so an empty subproject does not count.</div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="block">
+    <h2 class="sec">Controls</h2>
+    <p class="sec-note">Fields are a rule rather than a box: the paper is already the surface. Text
+      areas grow with their content instead of scrolling inside two lines.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 56px;max-width:840px">
+      <div>
+        <div class="lbl m">Title</div>
+        <input class="field" value="Server access and VLAN" readonly>
+      </div>
+      <div>
+        <div class="lbl m">Due date</div>
+        <input class="field" value="2026-09-18" readonly>
+      </div>
+    </div>
+
+    <div style="max-width:840px;margin-top:26px">
+      <div class="lbl m">
+        <span style="border-bottom:1px dotted var(--rule-strong);cursor:help">Goal</span>
+      </div>
+      <div class="field" style="min-height:52px;line-height:1.55;color:var(--ink)">
+        Scan data available to the breeding team within 24 hours of a run, without anyone
+        copying files by hand.
+      </div>
+      <div class="rs" style="font-size:10.5px;margin-top:7px">
+        The dotted label carries its own explanation on hover. No question marks, no icons, no tab stop.
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:34px;align-items:center">
+      <span class="btn">Save</span>
+      <span class="btn btn-g">Cancel</span>
+      <span class="btn btn-d">Delete</span>
+      <span class="btn" style="opacity:.45">Disabled</span>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="block">
+    <h2 class="sec">The grid</h2>
+    <p class="sec-note">Every page in the app is the same three columns: a 184 px label gutter, a
+      flexible middle, a 420 px right column carrying the pulse. Hairline rules separate them. The
+      page ground shows through; nothing floats on top of it.</p>
+
+    <div style="display:grid;grid-template-columns:184px 1fr 420px;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong)">
+      <div style="padding:22px 0 22px 0">
+        <div class="lbl m">184 px</div>
+        <div class="m" style="font-size:11px;margin-top:6px;padding-right:20px">Label gutter: page title, status, people, sub navigation</div>
+      </div>
+      <div style="border-left:1px solid var(--rule);padding:22px 0 22px 40px">
+        <div class="lbl m">flexible</div>
+        <div class="m" style="font-size:11px;margin-top:6px">The work itself: the tree, the form, the report</div>
+      </div>
+      <div style="border-left:1px solid var(--rule);padding:22px 0 22px 32px">
+        <div class="lbl m">420 px</div>
+        <div class="m" style="font-size:11px;margin-top:6px">The pulse: work log, blockers, decisions</div>
+      </div>
+    </div>
+  </div>
+
+</div>

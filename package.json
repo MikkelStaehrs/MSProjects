@@ -1,0 +1,31 @@
+{
+  "name": "msprojects",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node lib/quick-add.test.mts && node lib/report.test.mts && node lib/template.test.mts && node lib/identity.test.mts && node lib/project-no.test.mts && node lib/wbs.test.mts && node lib/reorder.test.mts && node lib/recipient.test.mts && node lib/loose-ends.test.mts && node lib/cost.test.mts && node lib/subtree.test.mts && node lib/prose.test.mts && node lib/strategy.test.mts",
+    "audit": "node scripts/audit.mts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.58.0",
+    "@types/d3-hierarchy": "^3.1.7",
+    "d3-hierarchy": "^3.1.2",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

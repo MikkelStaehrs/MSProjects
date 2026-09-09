@@ -1,0 +1,213 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .num{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:500}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .g3{display:grid;grid-template-columns:184px 1fr 420px}
+  .bl{border-left:1px solid var(--rule)}
+  .mark{display:block;width:7px;height:7px;flex:0 0 auto}
+  .cells{display:flex;gap:2px;flex:1} .cell{height:6px;flex:1;background:var(--empty)} .cell.on{background:var(--green)}
+  .navlink{font-size:12px;color:var(--muted)}
+  .navlink.on{color:var(--ink);font-weight:500;border-bottom:1px solid var(--ink);padding-bottom:2px}
+</style>
+
+<!-- Header -->
+<header style="display:flex;align-items:flex-end;justify-content:space-between;padding:34px 64px 18px">
+  <span class="dsp" style="font-size:40px;line-height:1;letter-spacing:-.02em">MSProjects</span>
+  <div style="display:flex;align-items:baseline;gap:28px">
+    <span class="navlink on">Overview</span>
+    <span class="navlink">Projects</span>
+    <span class="navlink">Blockers</span>
+    <span class="navlink">Friday</span>
+    <span class="navlink">Templates</span>
+    <span class="rs" style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-left:8px">Sign out</span>
+  </div>
+</header>
+<div style="height:2px;background:var(--ink)"></div>
+
+<!-- Context band -->
+<div class="g3">
+  <div class="lbl m" style="padding:12px 20px 12px 64px">Wednesday, 2 Sep</div>
+  <div class="lbl m bl" style="padding:12px 40px">3 running projects &nbsp;·&nbsp; 2 open blockers &nbsp;·&nbsp; 31 waiting days</div>
+  <div class="bl" style="display:flex;align-items:center;justify-content:flex-end;gap:24px;padding:12px 64px 12px 32px">
+    <span class="lbl m">New project</span>
+    <span class="lbl" style="color:var(--green)">New entry &nbsp;Ctrl K</span>
+  </div>
+</div>
+<div style="height:1px;background:var(--rule-strong)"></div>
+
+<div class="g3">
+
+  <!-- Gutter -->
+  <div style="padding:32px 20px 32px 64px">
+    <h1 class="dsp" style="font-size:30px;line-height:1.06;letter-spacing:-.01em;margin:0">
+      Over&shy;view
+    </h1>
+  </div>
+
+  <!-- Projects -->
+  <div class="bl">
+
+    <article style="padding:28px 40px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+        <div class="lbl m">PRODUCTION &nbsp;·&nbsp; PR-26-0001</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="mark" style="background:var(--green)"></span><span class="lbl-t">Active</span>
+        </div>
+      </div>
+      <h2 class="dsp" style="font-size:27px;line-height:1.15;margin:8px 0 0">Seed scanner line 2</h2>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:20px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell on"></span><span class="cell"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">58 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">7 of 12</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:128px 1fr;margin-top:20px">
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Next date</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px">
+          Acceptance test on hall floor <span class="m">· 11 Sep · in 9 days</span>
+        </div>
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Blockers</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px;line-height:1.6">
+          <div><span class="ox" style="font-weight:500;font-variant-numeric:tabular-nums">19 days</span>
+            waiting on IT, Server access and VLAN <span class="m">(Data platform)</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article style="padding:28px 40px;border-top:1px solid var(--rule)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+        <div class="lbl m">CAPEX &nbsp;·&nbsp; CX-26-0002</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="mark" style="background:var(--oxblood)"></span><span class="lbl-t">Blocked</span>
+        </div>
+      </div>
+      <h2 class="dsp" style="font-size:27px;line-height:1.15;margin:8px 0 0">Cold store extension</h2>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:20px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+          <span class="cell"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">29 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">2 of 7</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:128px 1fr;margin-top:20px">
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Next date</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px">
+          Quotes back from all three <span class="ox">· 28 Aug · 5 days overdue</span>
+        </div>
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Blockers</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px;line-height:1.6">
+          <div><span class="ox" style="font-weight:500;font-variant-numeric:tabular-nums">12 days</span>
+            waiting on Management, Investment application not signed</div>
+        </div>
+      </div>
+    </article>
+
+    <article style="padding:28px 40px;border-top:1px solid var(--rule)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+        <div class="lbl m">IT &nbsp;·&nbsp; IT-26-0003</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="mark" style="background:var(--green)"></span><span class="lbl-t">Active</span>
+        </div>
+      </div>
+      <h2 class="dsp" style="font-size:27px;line-height:1.15;margin:8px 0 0">Data platform</h2>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:20px">
+        <span class="cells">
+          <span class="cell on"></span><span class="cell on"></span><span class="cell on"></span>
+          <span class="cell"></span><span class="cell"></span><span class="cell"></span>
+          <span class="cell"></span><span class="cell"></span>
+        </span>
+        <span class="num" style="min-width:52px;text-align:right;font-size:20px">38 %</span>
+        <span class="m" style="min-width:54px;font-size:11px;font-variant-numeric:tabular-nums">3 of 8</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:128px 1fr;margin-top:20px">
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Next date</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px">
+          Write test protocol <span class="m">· 18 Sep · in 16 days</span>
+        </div>
+        <div class="lbl-t m" style="border-top:1px solid var(--rule);padding:12px 0">Blockers</div>
+        <div style="border-top:1px solid var(--rule);padding:12px 0;font-size:13px">
+          <span class="m">None active.</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Right column -->
+  <div class="bl">
+    <section style="padding:32px 64px 30px 32px">
+      <h2 class="dsp" style="font-size:26px;margin:0">Open blockers</h2>
+      <div style="margin-top:16px">
+        <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--rule);padding:12px 0">
+          <div class="num ox" style="min-width:44px;font-size:30px;line-height:1">19</div>
+          <div style="flex:1">
+            <div style="font-size:13px;line-height:1.35">Server access and VLAN</div>
+            <div class="m" style="font-size:11px;margin-top:2px">IT · expected 22 Aug<span class="ox"> · overdue</span></div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+          <div class="num" style="min-width:44px;font-size:30px;line-height:1">12</div>
+          <div style="flex:1">
+            <div style="font-size:13px;line-height:1.35">Investment application not signed</div>
+            <div class="m" style="font-size:11px;margin-top:2px">Management · expected 9 Sep</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="height:1px;background:var(--rule)"></div>
+
+    <section style="padding:28px 64px 30px 32px">
+      <h2 class="dsp" style="font-size:26px;margin:0">Next steps</h2>
+      <div style="margin-top:14px">
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);padding:10px 0">
+          <div class="ox" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">28 Aug</div>
+          <div style="flex:1;font-size:12.5px">Quotes back from all three</div>
+        </div>
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">4 Sep</div>
+          <div style="flex:1;font-size:12.5px">Load cell calibration signed off</div>
+        </div>
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">11 Sep</div>
+          <div style="flex:1;font-size:12.5px">Acceptance test on hall floor</div>
+        </div>
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">18 Sep</div>
+          <div style="flex:1;font-size:12.5px">Write test protocol</div>
+        </div>
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);padding:10px 0">
+          <div class="m" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">25 Sep</div>
+          <div style="flex:1;font-size:12.5px">Handover to maintenance</div>
+        </div>
+        <div style="display:flex;gap:16px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0">
+          <div class="m" style="min-width:58px;font-size:11px;font-variant-numeric:tabular-nums">2 Oct</div>
+          <div style="flex:1;font-size:12.5px">Foundation drawing approved</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>

@@ -1,0 +1,192 @@
+<script src="./support.js"></script>
+<style>
+  :root{
+    --paper:#F8F8F6; --sheet:#FFFFFF; --ink:#1A1F1B; --muted:#6B6B65;
+    --rule:#DCDCD7; --rule-strong:#B4B4AD; --green:#1E4A34; --oxblood:#8A3520; --empty:#E6E6E1;
+    --sans:'Helvetica Neue',Arial,Helvetica,sans-serif;
+    --display:Didot,'Bodoni MT','Times New Roman',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  .lbl{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .lbl-t{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+  .dsp{font-family:var(--display);font-weight:500}
+  .m{color:var(--muted)} .ox{color:var(--oxblood)} .gr{color:var(--green)} .rs{color:var(--rule-strong)}
+  .tn{font-variant-numeric:tabular-nums}
+  .sheetbox{width:680px;border:1px solid var(--ink);background:var(--sheet)}
+  .qline{padding:20px 24px;font-size:17px}
+  .bar{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);padding:10px 24px}
+  .kinds{display:flex;align-items:center;gap:16px;border-top:1px solid var(--rule);padding:10px 24px}
+  .cap{font-size:11.5px;line-height:1.7;color:var(--muted)}
+</style>
+
+<div style="padding:44px 64px 56px">
+
+  <div style="display:flex;align-items:flex-end;justify-content:space-between">
+    <div class="dsp" style="font-size:34px;line-height:1;letter-spacing:-.02em">Quick entry</div>
+    <div class="lbl m">Ctrl K anywhere &nbsp;·&nbsp; one field &nbsp;·&nbsp; Enter saves</div>
+  </div>
+  <div style="height:2px;background:var(--ink);margin-top:16px"></div>
+
+  <p class="cap" style="max-width:660px;margin:20px 0 0">
+    The feature that decides whether the tool survives past week three. One field. The prefix on
+    the first character decides what gets written, and the same pure function parses the preview
+    on the client and the record on the server, so the overlay can never promise one thing and
+    save another.
+  </p>
+
+  <!-- State 1: a log entry -->
+  <div style="margin-top:38px">
+    <div class="lbl m" style="margin-bottom:12px">No prefix &nbsp;·&nbsp; a log entry</div>
+    <div style="background:rgba(26,31,27,.15);padding:34px;display:flex;justify-content:center">
+      <div class="sheetbox">
+        <div class="qline">Chased IT again on the VLAN. Ticket reassigned, no date given.</div>
+        <div class="bar">
+          <span class="m" style="font-size:11px">Work entry on Data platform</span>
+          <span class="lbl-t gr">Tab changes target</span>
+        </div>
+        <div class="kinds">
+          <span class="lbl-t m">Log entry</span>
+          <span class="lbl-t">Work <span class="tn" style="margin-left:6px">&#8963;1</span></span>
+          <span class="lbl-t rs">Note <span class="tn" style="margin-left:6px">&#8963;2</span></span>
+          <span class="lbl-t rs">Meeting <span class="tn" style="margin-left:6px">&#8963;3</span></span>
+          <span class="lbl-t rs">Risk <span class="tn" style="margin-left:6px">&#8963;4</span></span>
+          <span class="rs" style="margin-left:auto;font-size:10px;letter-spacing:.14em;text-transform:uppercase">Enter saves</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="cap" style="max-width:660px;margin:16px 0 0">
+    Work, Note, Meeting and Risk are kinds of <span style="color:var(--ink)">log entry</span>, not
+    the four things quick entry can write. A prefix makes something else, and the row then dims
+    and its shortcuts stop rather than sitting there looking like the control that decides.
+  </p>
+
+  <!-- The four prefixes -->
+  <div style="margin-top:44px">
+    <div class="lbl m" style="margin-bottom:14px">The four prefixes</div>
+
+    <div style="display:grid;grid-template-columns:290px 1fr;gap:0 32px;align-items:baseline;border-top:1px solid var(--rule);padding:14px 0">
+      <div style="font-size:14px">Chased IT again</div>
+      <div class="cap">Log entry on the target, with the chosen kind.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:290px 1fr;gap:0 32px;align-items:baseline;border-top:1px solid var(--rule);padding:14px 0">
+      <div style="font-size:14px"><span class="gr" style="font-weight:500">+</span> Write test protocol</div>
+      <div class="cap">New task under the target, status planned.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:290px 1fr;gap:0 32px;align-items:baseline;border-top:1px solid var(--rule);padding:14px 0">
+      <div style="font-size:14px"><span class="ox" style="font-weight:500">!</span> Waiting for VLAN <span class="ox">@</span> IT</div>
+      <div class="cap">Blocker on the target, waiting on IT. The <span style="color:var(--ink)">last</span>
+        @ is read, so an email address in the title survives. The recipients already in use are
+        offered as soon as the line starts with !, and the spelling is settled on the server, so
+        «project board» is stored as «Project Board» and the chart never splits in two.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:290px 1fr;gap:0 32px;align-items:baseline;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0">
+      <div style="font-size:14px"><span class="gr" style="font-weight:500">?</span> Chose 130 kV
+        <span class="m">//</span> heavier seed needs it</div>
+      <div class="cap">Decision on the target. The rationale after // is optional.</div>
+    </div>
+
+    <p class="cap" style="margin-top:14px">
+      The prefix counts only at the start of the line, so
+      <span style="color:var(--ink)">Load cells 4+2 mounted</span> is an ordinary log entry.
+    </p>
+  </div>
+
+  <!-- State 2: blocker preview -->
+  <div style="margin-top:44px">
+    <div class="lbl m" style="margin-bottom:12px">! &nbsp;·&nbsp; a blocker, previewed before it is written</div>
+    <div style="background:rgba(26,31,27,.15);padding:34px;display:flex;justify-content:center">
+      <div class="sheetbox">
+        <div class="qline"><span class="ox">!</span> Waiting for VLAN <span class="ox">@</span> IT</div>
+        <div class="bar">
+          <span class="m" style="font-size:11px">Blocker on Data platform, waiting on IT</span>
+          <span class="lbl-t gr">Tab changes target</span>
+        </div>
+        <div class="kinds">
+          <span class="lbl-t m">Waiting on</span>
+          <span style="font-size:12px;color:var(--ink)">IT</span>
+          <span class="rs" style="font-size:12px">Project Board</span>
+          <span class="rs" style="font-size:12px">ELT Acceptance</span>
+        </div>
+        <div class="kinds" style="opacity:.3">
+          <span class="lbl-t rs">Log entry</span>
+          <span class="lbl-t rs">Work <span class="tn" style="margin-left:6px">&#8963;1</span></span>
+          <span class="lbl-t rs">Note <span class="tn" style="margin-left:6px">&#8963;2</span></span>
+          <span class="lbl-t rs">Meeting <span class="tn" style="margin-left:6px">&#8963;3</span></span>
+          <span class="lbl-t rs">Risk <span class="tn" style="margin-left:6px">&#8963;4</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- State 3: target picker -->
+  <div style="margin-top:44px">
+    <div class="lbl m" style="margin-bottom:12px">Tab &nbsp;·&nbsp; the target picker, searching the whole path</div>
+    <div style="background:rgba(26,31,27,.15);padding:34px;display:flex;justify-content:center">
+      <div class="sheetbox">
+        <div class="qline">data serv</div>
+        <div style="border-top:1px solid var(--rule);max-height:320px">
+          <div style="background:var(--paper);padding:11px 24px;border-left:2px solid var(--green)">
+            <div style="font-size:13px">Server access and VLAN</div>
+            <div class="m" style="font-size:10.5px;margin-top:2px">
+              Seed scanner line 2 &rsaquo; Data platform</div>
+          </div>
+          <div style="padding:11px 24px;border-top:1px solid var(--rule)">
+            <div style="font-size:13px">Data platform</div>
+            <div class="m" style="font-size:10.5px;margin-top:2px">Seed scanner line 2</div>
+          </div>
+          <div style="padding:11px 24px;border-top:1px solid var(--rule)">
+            <div style="font-size:13px">Server rack relocation</div>
+            <div class="m" style="font-size:10.5px;margin-top:2px">
+              Data platform &rsaquo; Infrastructure</div>
+          </div>
+        </div>
+        <div class="rs" style="border-top:1px solid var(--rule);padding:10px 24px;font-size:10px;letter-spacing:.14em;text-transform:uppercase">
+          Enter picks &nbsp;·&nbsp; Esc goes back
+        </div>
+      </div>
+    </div>
+    <p class="cap" style="margin-top:14px">
+      Every word in the query must appear in the path. Simple beats clever.
+    </p>
+  </div>
+
+  <!-- Target guessing -->
+  <div style="margin-top:44px">
+    <div class="lbl m" style="margin-bottom:14px">How the target is guessed</div>
+    <p class="cap" style="max-width:660px;margin:0 0 16px">
+      The common case must cost no choices, so the overlay opens with a target already chosen.
+      In order:</p>
+    <div style="display:grid;grid-template-columns:34px 1fr;gap:0 20px;align-items:baseline;border-top:1px solid var(--rule);padding:12px 0">
+      <div class="dsp m" style="font-size:20px">1</div>
+      <div style="font-size:13px">The part you have open with ?focus=</div>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;gap:0 20px;align-items:baseline;border-top:1px solid var(--rule);padding:12px 0">
+      <div class="dsp m" style="font-size:20px">2</div>
+      <div style="font-size:13px">The project page you are standing on</div>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;gap:0 20px;align-items:baseline;border-top:1px solid var(--rule);padding:12px 0">
+      <div class="dsp m" style="font-size:20px">3</div>
+      <div style="font-size:13px">The node you last wrote on, from localStorage</div>
+    </div>
+    <div style="display:grid;grid-template-columns:34px 1fr;gap:0 20px;align-items:baseline;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0">
+      <div class="dsp m" style="font-size:20px">4</div>
+      <div style="font-size:13px">The first project</div>
+    </div>
+  </div>
+
+  <!-- Confirmation -->
+  <div style="margin-top:44px">
+    <div class="lbl m" style="margin-bottom:12px">After Enter</div>
+    <div style="display:inline-block;border:1px solid var(--green);background:var(--sheet);padding:10px 16px;font-size:12px;color:var(--green)">
+      Blocker opened on Data platform
+    </div>
+    <p class="cap" style="margin-top:14px;max-width:660px">
+      Bottom left, then gone. No dialog to dismiss, because dismissing a dialog is the fifth
+      second that kills the habit.
+    </p>
+  </div>
+
+</div>
